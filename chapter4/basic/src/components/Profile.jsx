@@ -1,15 +1,12 @@
 import React from 'react';
 
-export default function Profile() {
+// props : 외부로부터 주어진 props를 이용해서 텍스트를 보여줌
+export default function Profile({props}) {
     return (
         <div className='profile'>
-            <img
-                className='photo'
-                src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-"
-                alt="avatar"
-            />
-            <h1>James Kim</h1>
-            <p>프론트엔드 개발자</p>
+            <img className='photo' src={props.image} alt='avatar' />
+            <h1>{props.name}</h1>
+            <p>{props.title}</p>
         </div>
     )
 }
