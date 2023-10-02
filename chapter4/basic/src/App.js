@@ -4,16 +4,37 @@ import './App.css';
 // 함수이름은 무조건 대문자
 function App() {
   const name = 'tyranno';
+  const list = ['우유', '딸기', '바나나'];
   return (
     <> {/*꼭 하나의 태그를 반환해야함 */}
-      <h1 className='orange'>Hello!</h1>
+    {/* javascript 문법을 사용할때는 항상 중괄호를 사용해야 한다. */}
+      <h1 className='orange'>{`Hello! ${name}`}</h1>
       <h2>Hello!</h2>
       <p>name</p>
       <p>{ name }</p> {/* 태그상에서 name 변수를 접근하려면 꼭 {}를 사용해야한다. */}
       <ul>
+        {/*
         <li>우유</li>
         <li>딸기</li>
         <li>바나나</li>
+         */}
+        {/*
+          list.map((item) => {
+            // 중괄호를 쓰면 return을 명시해 준다.
+            return <li>{item}</li>;
+          })
+        */}
+        {/*
+          list.map(function(item){
+            return <li>{item}</li>
+          })
+        */}
+        {
+          list.map((item) => (
+            return <li>{item}</li>;
+          ))
+        }
+
       </ul>
       <img
         style={{ width:'300px', height: '500px'}} // javascript 에서도 object 문법을 이용해서 객체의 값을 작성함
