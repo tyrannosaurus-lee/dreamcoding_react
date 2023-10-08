@@ -13,13 +13,22 @@ export default function Counter() {
     // 여러번 호출이 되어도 증가된 count값을 기억할 수 있음
     return (
         <div className='counter'>
-            {/* <span className='number'>0</span> */}
             <span className='number'>{count}</span>
-            <button className='button' onClick={()=> {
-                setCount(count + 1);
-                // 리액트에서는 ui와 밀접하게 관련있는 데이터는 state에 보관해줘야 함
-                console.log(count);
-            }}>Add +</button>
+            <button
+                className='button'
+                onClick={()=> {
+                    setCount(count + 1); // 0 + 1
+                    setCount(count + 1); // 0 + 1
+                    setCount(count + 1); // 0 + 1
+                    setCount(count + 1); // 0 + 1
+                    setCount(count + 1); // 0 + 1
+                }}
+                // 숫자는 5가 아닌 1이 나옴
+                // onClick이 호출되었을 때 전달되는 콜백함수는 현재 상태를 스냅샷으로 저장함.
+                // 아무리 많이 setCount호출을 해도 count가 계속 0으로 고정되어 있어서 1로 설정됨
+            >
+                Add +
+            </button>
         </div>
     );
 }
